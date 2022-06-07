@@ -1,7 +1,7 @@
 <?php
 
 $DB_HOST = 'localhost';
-$DB_NAME = 'gpaf';
+$DB_NAME = 'gbaf';
 $DB_USER = 'root';
 $DB_PASSWORD = "";
 
