@@ -25,8 +25,8 @@ create table partners(
 	logo varchar(255) not null,
 	title varchar(255) not null,
 	description text,
-	`like` int,
-	`dislike` int
+	`like` tinyint,
+	`dislike` tinyint
 )ENGINE = InnoDB;
 
 create table comments(
