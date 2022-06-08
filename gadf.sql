@@ -1,11 +1,11 @@
 create table users(
 	id int primary key auto_increment not null,
-	name varchar(255) not null,
-	firtname varchar(255) not null,
-	username varchar(255) not null,
-	`password` varchar(255) not null,
-	secret_question_id int not null,
-	secret_answer varchar(255) not null	
+	name varchar(255),
+	firtname varchar(255),
+	username varchar(255),
+	`password` varchar(255),
+	secret_question_id int,
+	secret_answer varchar(255)	
 )ENGINE = InnoDB;
 
 create table secret_questions(
