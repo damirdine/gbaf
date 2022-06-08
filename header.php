@@ -36,7 +36,7 @@ include_once('config.php');
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Profil</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item bg-danger" href='./logout.php'  type="button">deconexion</a></li>
+                            <li><a class="dropdown-item bg-danger" href='./logout.php'  type="button">déconnexion</a></li>
                         </ul>
                     </div>
                 <?php endif; ?>
