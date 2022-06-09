@@ -12,11 +12,10 @@ if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_qu
     $user = $checkUser->fetch();
     
     if($_POST['username']===$user['username']){
+
         $alreadySign = "Vous etes deja inscrit avec cet username (". $_POST['username'].")";
+        
     }else{
-        $userSigned=$_POST['firstname'];
-        $_SESSION['logged_user_name'] = $userSigned;
-        $_SESSION['logged_user'] = htmlspecialchars($_POST['username']);
 
         $addUserSqlREquest = "INSERT INTO users (name,firstname,username,password,secret_question_id,secret_answer) VALUES (:name, :firstname,:username,:password,:secretQuestionID,:secret_answer); ";
         $addUser = $db -> prepare($addUserSqlREquest);
@@ -30,6 +29,21 @@ if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_qu
             'secret_answer'=> password_hash($_POST['password'],PASSWORD_BCRYPT), 
         ]
         )or die(print_r($db->errorInfo()));
+
+        $checkUserSqlREquest = "SELECT * FROM users WHERE username = :username;";
+        $checkUser = $db -> prepare($checkUserSqlREquest);
+        $checkUser->execute(
+        [
+            'username'=>$_POST['username'],
+        ]
+        )or die(print_r($db->errorInfo()));
+        $user = $checkUser->fetch();
+
+        $userSigned=$user['firstname'].' '.$user['name'];
+
+        $_SESSION['logged_user_name'] = $userSigned;
+        $_SESSION['logged_user'] = htmlspecialchars($user['username']);
+        header("Refresh:0;");
     }
 
 }
