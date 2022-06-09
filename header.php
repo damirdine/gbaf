@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('config.php');
+include_once('sql.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@ include_once('config.php');
                 <?php if (!isset($_SESSION['logged_user'])) : ?>
                     <a href='./login.php' class="btn btn-primary me-2" type="button">connexion
                     </a>
-                    <a href='./signup.php' class="btn btn-primary bg-light text-primary me-2" type="button">inscription
+                    <a href='./register.php' class="btn btn-primary bg-light text-primary me-2" type="button">inscription
                     </a>
                 <?php else : ?>
                     <div class="dropdown">

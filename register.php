@@ -14,17 +14,13 @@ if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_qu
     if($_POST['username']===$user['username']){
         $alreadySign = "Vous etes deja inscrit avec cet username (". $_POST['username'].")";
     }else{
-        $addUserSqlREquest = "INSERT INTO users (name,firstname,username,password,secret_question_id,secret_answer) VALUES (:name,:firstname, :username, :password,:secret_question_id,:secret_answer); ";
+
+        $addUserSqlREquest = "INSERT INTO users (name,firstname,username,password,secret_question_id,secret_answer) VALUES (:name,:firstname, :username, :password,:secret_question_id,:secret_answer);";
         $addUser = $db -> prepare($addUserSqlREquest);
         
         $addUser->execute(
             [
-                'name'=> htmlspecialchars($_POST['name']),
-                'firstname'=> htmlspecialchars($_POST['firstname']),
-                'username'=> htmlspecialchars($_POST['username']),
-                'password'=> password_hash(htmlspecialchars($_POST['password']),PASSWORD_BCRYPT),
-                'secret_question_id'=> htmlspecialchars($_POST['secret_question_id']),
-                'secret_answer'=> password_hash(htmlspecialchars($_POST['secret_answer']),PASSWORD_BCRYPT),
+                
             ]
         )or die(print_r($db->errorInfo()));
         
