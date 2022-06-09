@@ -1,3 +1,4 @@
 <?php 
 include_once 'header.php';
-include 'register.php';
+include_once 'register.php';
+include_once 'footer.php';
