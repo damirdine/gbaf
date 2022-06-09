@@ -1,7 +1,7 @@
 <?php
 include 'sql.php';
 
-if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_question'],$_POST['secret_answer']) && $_POST['password']===$_POST['confirm_password']){
+if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_question_id'],$_POST['secret_answer']) && $_POST['password']===$_POST['confirm_password']){
     $checkUserSqlREquest = "SELECT * FROM users WHERE username = :username;";
     $checkUser = $db -> prepare($checkUserSqlREquest);
     $checkUser->execute(
@@ -17,11 +17,19 @@ if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_qu
         $userSigned=$_POST['firstname'];
         $_SESSION['logged_user_name'] = $userSigned;
         $_SESSION['logged_user'] = htmlspecialchars($_POST['username']);
-        
-        var_dump($userSigned);
 
-       
-        
+        $addUserSqlREquest = "INSERT INTO users (name,firstname,username,password,secret_question_id,secret_answer) VALUES (:name, :firstname,:username,:password,:secretQuestionID,:secret_answer); ";
+        $addUser = $db -> prepare($addUserSqlREquest);
+        $addUser->execute(
+        [
+            'name'=> htmlspecialchars($_POST['name']),
+            'firstname'=> htmlspecialchars($_POST['firstname']),
+            'username'=> htmlspecialchars($_POST['username']), 
+            'password'=> password_hash($_POST['password'],PASSWORD_BCRYPT),
+            'secretQuestionID'=> htmlspecialchars($_POST['secret_question_id']),
+            'secret_answer'=> password_hash($_POST['password'],PASSWORD_BCRYPT), 
+        ]
+        )or die(print_r($db->errorInfo()));
     }
 
 }
@@ -64,7 +72,7 @@ $secretQuestions = $getQuestions->fetchAll();
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Question secrète</label>
-            <select class="form-select" name="secret_question" aria-label="Default select example">
+            <select class="form-select" name="secret_question_id" aria-label="Default select example">
                 <option selected>Choisissez une question secrète </option>
                 <?php foreach($secretQuestions as $secretQuestion):?>
                 <option value="<?=$secretQuestion['id']?>"><?=$secretQuestion['question']?></option>
