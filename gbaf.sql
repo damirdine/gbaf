@@ -7,6 +7,8 @@ create table users(
 	secret_question_id int,
 	secret_answer varchar(255)	
 )ENGINE = InnoDB;
+INSERT INTO users (id,name,firstname,username,password,secret_question_id,secret_answer) VALUES 
+(1,'user','test', 'user0', 'password','1',:'secret_answer');
 
 create table secret_questions(
 	id int primary key auto_increment not null,

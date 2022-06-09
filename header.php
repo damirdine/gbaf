@@ -23,9 +23,9 @@ include_once('sql.php');
             </button>
             <div class="d-flex">
                 <?php if (!isset($_SESSION['logged_user'])) : ?>
-                    <a href='./userLogin/login.php' class="btn btn-primary me-2" type="button">Connexion
+                    <a href='./userlogin.php' class="btn btn-primary me-2" type="button">Connexion
                     </a>
-                    <a href='./userLogin/register.php' class="btn btn-primary bg-light text-primary me-2" type="button">Inscription
+                    <a href='./userregister.php' class="btn btn-primary bg-light text-primary me-2" type="button">Inscription
                     </a>
                 <?php else : ?>
                     <div class="dropdown">
@@ -36,7 +36,7 @@ include_once('sql.php');
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <li><a class="dropdown-item" href="profil.php">Profil</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item bg-danger" href='./userLogin/logout.php'  type="button">Déconnexion</a></li>
+                            <li><a class="dropdown-item bg-danger" href='./userlogout.php'  type="button">Déconnexion</a></li>
                         </ul>
                     </div>
                 <?php endif; ?>
