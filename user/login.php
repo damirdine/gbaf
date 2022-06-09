@@ -29,7 +29,7 @@ if(isset($_POST['password']) && isset($_POST['username'])){
     <?php elseif(isset($passworNotMatch)):?>
         <p class="alert alert-warning mt-4"><?php echo(htmlspecialchars($passworNotMatch))?>.</p>
     <?php endif;?>
-    <form class="container m-5 d-grid gap-4" method='POST' action='index.php'>
+    <form class="container m-5 d-grid gap-4" method='POST' action='../'>
         <h1>Connexion</h1>
         <div class="form-group">
             <label for="exampleInputEmail1">Mail</label>

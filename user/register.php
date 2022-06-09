@@ -65,7 +65,7 @@ $secretQuestions = $getQuestions->fetchAll();
 <?php endif; ?>       
 <?php if(!isset($_SESSION['logged_user_name'])):?>
      
-    <form class="mt-4" action='./index.php' method="POST">
+    <form class="mt-4" action='../' method="POST">
         <h1>Inscription</h1>
         <div class="mb-3">
             <label for="username" class="form-label">Nom</label>
