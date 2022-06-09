@@ -23,20 +23,20 @@ include_once('sql.php');
             </button>
             <div class="d-flex">
                 <?php if (!isset($_SESSION['logged_user'])) : ?>
-                    <a href='./login.php' class="btn btn-primary me-2" type="button">connexion
+                    <a href='./login.php' class="btn btn-primary me-2" type="button">Connexion
                     </a>
-                    <a href='./register.php' class="btn btn-primary bg-light text-primary me-2" type="button">inscription
+                    <a href='./register.php' class="btn btn-primary bg-light text-primary me-2" type="button">Inscription
                     </a>
                 <?php else : ?>
                     <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?= $_SESSION['logged_user'] ?>
+                            <?= $_SESSION['logged_user_name']?>
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Profil</a></li>
+                            <li><a class="dropdown-item" href="profil.php">Profil</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item bg-danger" href='./logout.php'  type="button">déconnexion</a></li>
+                            <li><a class="dropdown-item bg-danger" href='./logout.php'  type="button">Déconnexion</a></li>
                         </ul>
                     </div>
                 <?php endif; ?>
