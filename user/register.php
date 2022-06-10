@@ -1,6 +1,5 @@
 <?php
-include_once 'header.php';
-
+include_once '../header.php';
 
 if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_question_id'],$_POST['secret_answer']) && $_POST['password']===$_POST['confirm_password']){
     $checkUserSqlREquest = "SELECT * FROM users WHERE username = :username;";
@@ -51,11 +50,6 @@ if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_qu
 if($_POST['password']!==$_POST['confirm_password']){
     $errorSign = 'error form sign';
 };
-echo('hello');
-$getQuestionRequest = "SELECT * FROM secret_questions";
-$getQuestions = $db -> prepare($getQuestionRequest);
-$getQuestions->execute()or die(print_r($db->errorInfo()));
-$secretQuestions = $getQuestions->fetchAll();
 
 ?>
  <?php if(isset($alreadySign)):?>
@@ -101,4 +95,4 @@ $secretQuestions = $getQuestions->fetchAll();
         <p class="alert alert-success mt-4">Bienvenue <?= htmlspecialchars(($_SESSION['logged_user_name']))?>.</p> 
 <?php endif; ?>
 
-<?php include_once 'footer.php'?>
+<?php include_once '../footer.php'?>
