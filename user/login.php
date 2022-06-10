@@ -8,7 +8,7 @@ if(isset($_POST['password'],$_POST['username'])){
             'username'=>$_POST['username'],
         ]
     )or die(print_r($db->errorInfo()));
-    $user = $checkUser->fetch();var_dump($user);
+    $user = $checkUser->fetch();
     if($_POST['username']!==$user['username']){
         $userNotExist = 'Aucun compte lié a ce username. Veillez Créé un compte';
     }
@@ -33,7 +33,7 @@ if(isset($_POST['password'],$_POST['username'])){
     <form class="container m-5 d-grid gap-4" method='POST' action='./'>
         <h1>Connexion</h1>
         <div class="form-group">
-            <label for="exampleInputEmail1">Mail</label>
+            <label for="exampleInputEmail1">Username</label>
             <input type="text" name="username" class="form-control" aria-describedby="usernameInput" placeholder="jhondoe">
         </div>
         <div class="form-group">
