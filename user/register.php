@@ -1,5 +1,6 @@
 <?php
-include 'sql.php';
+include_once 'header.php';
+
 
 if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_question_id'],$_POST['secret_answer']) && $_POST['password']===$_POST['confirm_password']){
     $checkUserSqlREquest = "SELECT * FROM users WHERE username = :username;";
@@ -50,11 +51,11 @@ if(isset($_POST['name'],$_POST['firstname'],$_POST['username'],$_POST['secret_qu
 if($_POST['password']!==$_POST['confirm_password']){
     $errorSign = 'error form sign';
 };
+echo('hello');
 $getQuestionRequest = "SELECT * FROM secret_questions";
 $getQuestions = $db -> prepare($getQuestionRequest);
 $getQuestions->execute()or die(print_r($db->errorInfo()));
 $secretQuestions = $getQuestions->fetchAll();
-
 
 ?>
  <?php if(isset($alreadySign)):?>
