@@ -20,6 +20,6 @@ des différentes banques françaises.
     - [ ] présentation succincte du GBAF.
     - [ ] liste des différents acteurs/partenaires du système bancaire français(logo,titre, présentation de l’entreprise en une phase,bouton « Afficher la suite » permettant d'accéder à la page de chaque acteur/partenaire).
 - ##### Détails de la page partenaire comprenant :
-    - logo, titre, texte de description complet.
-    - bouton Like/Dislike, avec indication du nombre de Like/Dislike.
-    - laisser un commentaire incluant prenom,date et le texte.
+    - [ ] logo, titre, texte de description complet.
+    - [ ] bouton Like/Dislike, avec indication du nombre de Like/Dislike.
+    - [ ] laisser un commentaire incluant prenom,date et le texte.
