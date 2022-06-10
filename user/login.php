@@ -29,6 +29,7 @@ if(isset($_POST['password'],$_POST['username'])){
         <p class="alert alert-warning mt-4"><?php echo(htmlspecialchars($userNotExist))?>.</p>
     <?php elseif(isset($passworNotMatch)):?>
         <p class="alert alert-warning mt-4"><?php echo(htmlspecialchars($passworNotMatch))?>.</p>
+        <a class="mt-4" href="./user/forgetPassword.php">Mot de passe oublié ?</a>
     <?php endif;?>
     <form class="container m-5 d-grid gap-4" method='POST' action='./'>
         <h1>Connexion</h1>
@@ -43,6 +44,7 @@ if(isset($_POST['password'],$_POST['username'])){
         <div class="form-group">       
             <button type="submit" class="btn btn-primary">Connexion</button>
         </div>
+        <a class="mt-4" href="./user/forgetPassword.php">Mot de passe oublié ?</a>
         <a class="mt-4" href="./user/register.php">S'inscrire</a>
     </form>
 <?php else:?>
