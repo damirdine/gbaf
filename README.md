@@ -10,10 +10,9 @@ des différentes banques françaises.
 #### Connexion/déconnexion:
 - [x] L'utilisateur peut créer son compte via une page d’inscription.
 - [x] Quand l’utilisateur est connecté, son nom et son prénom sont indiqués dans le ​header ​sur l’ensemble des pages.
-- [x] Si l'utilisateur est déconnecté, il est redirigé automatiquement vers la première page pour une nouvelle connexion via un UserName et un Password.
+- [x] Si l'utilisateur est déconnecté, il est redirigé automatiquement vers la page connexion.
 - [ ] Si l'utilisateur **oublie son mot de passe**, il peut saisir son **UserName** et répondre à la **question secrète** pour en créer un nouveau.
 - [ ] L’utilisateur peut modifier ses informations personnelles à tout moment via la page « Paramètres du compte ».
-- [ ] Si l'utilisateur est déconnecté, il est redirigé automatiquement vers la page connexion.
 
 #### Utilisateur connecté
 - ##### Sont présents sur la page d'accueil:
