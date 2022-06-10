@@ -42,7 +42,7 @@ if(isset($_POST['password']) && isset($_POST['username'])){
         <div class="form-group">       
             <button type="submit" class="btn btn-primary">Connexion</button>
         </div>
-        <a class="mt-4" href="./register.php">S'inscrire</a>
+        <a class="mt-4" href="./user/register.php">S'inscrire</a>
     </form>
 <?php else:?>
     <p class="alert alert-success mt-4"><?php echo('Bienvenue '.$_SESSION['logged_user_name'])?>.</p>
