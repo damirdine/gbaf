@@ -17,10 +17,9 @@ include_once('sql.php');
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">GBAF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="index.php">
+            <img src="./assets/gbaf.png" alt="" width="45">
+            </a>
             <div class="d-flex">
                 <?php if (!isset($_SESSION['logged_user'])) : ?>
                     <a href='./user/login.php' class="btn btn-primary me-2" type="button">Connexion
@@ -29,7 +28,7 @@ include_once('sql.php');
                     </a>
                 <?php else : ?>
                     <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= $_SESSION['logged_user_name']?>
                         </a>
 
